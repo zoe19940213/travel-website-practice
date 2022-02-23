@@ -1,7 +1,7 @@
-## Travel Selling Website 
+# Travel Selling Website 
 - selling trip in Taiwan or abroad
 
-#-- * -- * - Function - * -- * --
+# -- * -- * - Function - * -- * --
 ## Home Page:
 - nav bar to switch categorizes (in development...)
 - carousel show the main product 
