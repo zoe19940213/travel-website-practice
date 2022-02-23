@@ -1,0 +1,344 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 16px;
+}
+
+nav,
+main,
+footer {
+  width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", sans-serif;
+}
+
+nav a {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+nav {
+  position: fixed;
+  z-index: 5;
+  height: 80px;
+  box-shadow: 0px 5px 5px 0px rgba(179, 179, 179, 0.65);
+  display: grid;
+  grid-template-columns: 100px minmax(350px, 1fr) 200px;
+  grid-gap: 10px;
+  line-height: 80px;
+  background: white;
+}
+nav .logo img {
+  height: 80px;
+  padding: 5px;
+}
+nav .category-list {
+  display: flex;
+}
+nav .category-list .category-item {
+  margin-left: 1rem;
+  color: black;
+}
+nav .category-list .category-item.high-light {
+  color: #dc0019;
+}
+nav .category-list .category-item:hover {
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+nav .nav-icon-group {
+  display: flex;
+  justify-content: center;
+}
+nav .nav-icon-group .nav-icon {
+  margin-right: 1rem;
+}
+nav .nav-icon-group .nav-icon i {
+  font-size: 1.3rem;
+}
+nav .nav-icon-group .nav-icon i:hover {
+  color: gray;
+  cursor: pointer;
+}
+nav .nav-icon-group .nav-icon.search-icon::after {
+  content: "";
+  height: 1.4rem;
+  margin-left: 1rem;
+  border-right: 1px solid black;
+}
+
+.main-carousel {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 600px;
+}
+.main-carousel .carousel-inner {
+  width: 100%;
+  height: 100%;
+}
+.main-carousel .carousel-inner .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.main-carousel .carousel-inner .slide img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+.main-carousel button {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  transform: rotate(45deg);
+}
+.main-carousel button:hover {
+  cursor: pointer;
+}
+.main-carousel .slide-left-btn {
+  left: 20px;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+}
+.main-carousel .slide-right-btn {
+  right: 20px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+}
+.main-carousel .slide-dots {
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.main-carousel .slide-dots .dot {
+  display: inline-block;
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid white;
+  border-radius: 50%;
+}
+.main-carousel .slide-dots .dot.full {
+  background: white;
+}
+.main-carousel .slide-dots:hover {
+  cursor: pointer;
+}
+
+.best-seller {
+  width: 80%;
+  margin: 1rem auto;
+  text-align: center;
+}
+.best-seller .title {
+  margin: 2rem;
+  color: #4c4c4c;
+}
+.best-seller .picture-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1rem;
+}
+.best-seller .picture-grid .grid-item {
+  position: relative;
+  width: 100%;
+  height: 40vw;
+  background: gray;
+}
+.best-seller .picture-grid .grid-item::before, .best-seller .picture-grid .grid-item::after {
+  content: "";
+  z-index: 3;
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+}
+.best-seller .picture-grid .grid-item::before {
+  top: 5%;
+  right: 2.5%;
+  width: 95%;
+  height: 90%;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  transform: scale(0, 1);
+}
+.best-seller .picture-grid .grid-item::after {
+  top: 2.5%;
+  right: 5%;
+  width: 90%;
+  height: 95%;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  transform: scale(1, 0);
+}
+.best-seller .picture-grid .grid-item .grid-item-text {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.best-seller .picture-grid .grid-item .grid-item-text h4 {
+  font-size: 2rem;
+  border-bottom: 1px solid white;
+}
+.best-seller .picture-grid .grid-item .grid-item-text p {
+  font-size: 1.5rem;
+}
+.best-seller .picture-grid .grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.best-seller .picture-grid .grid-item:hover .grid-item-text {
+  opacity: 1;
+}
+.best-seller .picture-grid .grid-item:hover::before, .best-seller .picture-grid .grid-item:hover::after {
+  transform: scale(1, 1);
+}
+.best-seller .picture-grid .grid-item:hover img {
+  opacity: 0.5;
+}
+
+.travel-abroad {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  margin-top: 4rem;
+}
+.travel-abroad .slogan {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  letter-spacing: 0.2rem;
+}
+.travel-abroad .picture-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: gray;
+}
+.travel-abroad .picture-row img {
+  width: 100%;
+  height: 40vw;
+  object-fit: cover;
+  opacity: 0.65;
+}
+
+.cooperation {
+  margin-top: 4rem;
+  width: 100%;
+}
+.cooperation .headline {
+  width: 100%;
+  text-align: center;
+  height: 150px;
+  background: #f3f5ff;
+}
+.cooperation .headline .title {
+  color: #4c4c4c;
+  line-height: 150px;
+}
+.cooperation .brand-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+.cooperation .brand-grid img {
+  width: 100%;
+  padding: 2rem;
+  background: #eff0fb;
+}
+.cooperation .brand-grid img:nth-child(odd) {
+  background: #dbdce6;
+}
+
+footer {
+  margin-top: 4rem;
+}
+footer .web-map {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+}
+footer .web-map .map-item {
+  flex: 1 1 25%;
+}
+footer .web-map .map-item h3 {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+footer .web-map .map-item ul {
+  line-height: 2rem;
+}
+footer .web-map .map-item ul li:hover {
+  color: gray;
+  cursor: pointer;
+}
+footer .credit-card {
+  width: 100%;
+  height: 5rem;
+  border-top: 1px solid #b9bbc3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .credit-card .credit-card-icon img {
+  width: 40px;
+  margin-left: 8px;
+}
+footer .credit-card .credit-card-icon img:nth-child(1) {
+  margin-left: 0px;
+}
+
+/*# sourceMappingURL=style.css.map */
