@@ -69,7 +69,7 @@ nav .category-list {
   display: flex;
 }
 nav .category-list .category-item {
-  margin-left: 1rem;
+  padding-left: 1rem;
   color: black;
 }
 nav .category-list .category-item.high-light {
@@ -99,6 +99,42 @@ nav .nav-icon-group .nav-icon.search-icon::after {
   height: 1.4rem;
   margin-left: 1rem;
   border-right: 1px solid black;
+}
+
+.side-part {
+  position: fixed;
+  z-index: 4;
+  padding: 1.5rem 2rem;
+  top: 80px;
+  left: -45%;
+  width: 45%;
+  max-width: 450px;
+  height: 100%;
+  background: white;
+  transition: left 0.5s;
+}
+.side-part.show {
+  left: 0;
+}
+.side-part .side {
+  display: none;
+}
+.side-part .side ul {
+  margin-bottom: 2rem;
+}
+.side-part .side ul li {
+  padding-left: 1rem;
+  line-height: 2.5rem;
+}
+.side-part .side ul li a {
+  color: initial;
+}
+.side-part .side ul li a:hover {
+  color: gray;
+  text-decoration: underline;
+}
+.side-part .side.show {
+  display: initial;
 }
 
 .main-carousel {

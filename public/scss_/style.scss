@@ -96,7 +96,7 @@ nav {
   .category-list {
     display: flex;
     .category-item {
-      margin-left: 1rem;
+      padding-left: 1rem;
       color: $color-text;
       &.high-light {
         color: $color-highlight;
@@ -133,6 +133,42 @@ nav {
 }
 
 //main
+.side-part {
+  position: fixed;
+  z-index: 4;
+  padding: 1.5rem 2rem;
+  top: $nav-height;
+  left: -45%;
+  width: 45%;
+  max-width: 450px;
+  height: 100%;
+  background: white;
+  transition: left 0.5s;
+  &.show {
+    left: 0;
+  }
+  .side {
+    display: none;
+    ul {
+      margin-bottom: 2rem;
+      li {
+        padding-left: 1rem;
+        line-height: 2.5rem;
+        a {
+          color: initial;
+          &:hover {
+            color: gray;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    &.show {
+      display: initial;
+    }
+  }
+}
+
 .main-carousel {
   position: relative;
   z-index: 0;

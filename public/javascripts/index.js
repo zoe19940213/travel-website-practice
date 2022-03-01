@@ -1,15 +1,22 @@
-//nodes
+// carousel-nodes
 const carouselInner = document.querySelector(".carousel-inner");
 const slideLeftBtn = document.querySelector(".slide-left-btn");
 const slideRightBtn = document.querySelector(".slide-right-btn");
 const slideDots = document.querySelector(".slide-dots");
+// side-part-nodes
+const categoryItems = document.querySelectorAll(".category-item");
+const sidePart = document.querySelector(".side-part");
+const sideInners = sidePart.children;
 
-//variables
+// carousel-variables
 const slides = carouselInner.children;
 const slides_position = [];
 const framPerSecond = 20;
 let currentSlideIndex = 0;
+// side-part-variables
+let showSide = 0;
 
+// carousel-functions
 function defaultShow() {
   for (i = 0; i < slides.length; i++) {
     slides_position[i] = i * 100;
@@ -49,6 +56,7 @@ function switchDot(currentSlide, targetSlide) {
   skipSlide(targetSlide);
 }
 
+// carousel-event listener
 slideLeftBtn.addEventListener("click", (event) => {
   if (currentSlideIndex === 0) {
     return;
@@ -70,6 +78,24 @@ slideDots.addEventListener("click", (event) => {
     switchDot(currentSlideIndex, targetSlide);
   }
 });
+for (let i = 0; i < categoryItems.length; i++) {
+  categoryItems[i].addEventListener("mouseenter", (event) => {
+    sidePart.classList.add("show");
+    sideInners[showSide].classList.remove("show");
+    sideInners[i].classList.add("show");
+    showSide = i;
+  });
+  categoryItems[i].addEventListener("mouseleave", (event) => {
+    sidePart.classList.remove("show");
+  });
+}
+sidePart.addEventListener("mouseenter", (event) => {
+  sidePart.classList.add("show");
+});
+sidePart.addEventListener("mouseleave", (event) => {
+  sidePart.classList.remove("show");
+});
 
+// main
 defaultShow();
 showDots(slides.length);
